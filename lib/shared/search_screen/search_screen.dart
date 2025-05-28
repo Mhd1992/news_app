@@ -14,6 +14,9 @@ class SearchScreen extends StatelessWidget {
     return BlocConsumer<NewsCubit, NewsState>(
   listener: (context, state) {
     // TODO: implement listener
+    if(state is NewsSearchLoadingState ){
+     const CircularProgressIndicator();
+    }
   },
   builder: (context, state) {
     var list = NewsCubit.get(context).searchResult;
@@ -40,7 +43,7 @@ class SearchScreen extends StatelessWidget {
               
             ],),
           ),
-          Expanded(child: buildArticleList(list))
+          Expanded(child: buildArticleList(list,searched: true))
         ],
       ),
     );
