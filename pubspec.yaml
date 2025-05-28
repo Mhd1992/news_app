@@ -41,6 +41,8 @@ dependencies:
   font_awesome_flutter:
   conditional_builder_null_safety:
   hexcolor:
+  sqflite:
+  shared_preferences:
 
 dev_dependencies:
   flutter_test:

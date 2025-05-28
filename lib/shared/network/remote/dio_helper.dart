@@ -5,7 +5,7 @@ class DioHelper {
   static Dio? dio;
  // static String baseUrl = 'https://student.valuxapps.com/api/';
   static String baseUrl = 'https://newsapi.org/';
-
+//https://newsapi.org/v2/everything?q=apple&apiKey=84a9a5a645bc4d73880a09141bf3506d
   static ini() {
     print('initisl');
     dio = Dio(

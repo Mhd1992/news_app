@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:new_app/components/widget_main.dart';
+import 'package:new_app/layouts/news_app/cubit/AppCubit.dart';
 import 'package:new_app/layouts/news_app/cubit/news_cubit.dart';
-import 'package:new_app/shared/network/remote/dio_helper.dart';
+import 'package:new_app/shared/search_screen/search_screen.dart';
 
 import 'cubit/news_state.dart';
 
@@ -22,7 +24,15 @@ class NewsLayout extends StatelessWidget {
 
             appBar: AppBar(
               title: const Text('NewsApp'),
-              actions:  [IconButton(onPressed: (){},icon: const Icon(Icons.search))],
+              actions:  [
+                IconButton(onPressed: (){
+                   navigateTo(context, SearchScreen());
+                },icon: const Icon(Icons.search)),
+                IconButton(onPressed: (){
+                  AppCubit.get(context).changeThemeMode();
+                },icon: const Icon(Icons.brightness_4_outlined)),
+
+              ],
 
             ),
             body: cubit.screens[cubit.currentIndex],

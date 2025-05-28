@@ -1,3 +1,4 @@
+import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -50,4 +51,13 @@ Widget buildArticle(article)=>Row(
       ),
     )
   ],
+);
+
+Widget buildArticleList(List<dynamic>list)=>ConditionalBuilder(
+  condition: list.isNotEmpty,
+  builder: (context)=>ListView.separated(
+      itemBuilder: (context, index) => buildArticle(list[index]),
+      separatorBuilder: (context, index) => const SizedBox(height: 8),
+      itemCount: list.length),
+  fallback: (context) =>const Center(child: CircularProgressIndicator()),
 );
