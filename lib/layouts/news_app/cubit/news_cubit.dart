@@ -30,18 +30,14 @@ class NewsCubit extends Cubit<NewsState> {
       label: 'Science',
 
     ),
-    const BottomNavigationBarItem(
-      icon: Icon(Icons.settings),
-      label: 'Settingd',
 
-    ),
   ];
 
   List<Widget> screens = const [
     BusinessScreen(),
     SportScreen(),
     ScienceScreen(),
-    SettingsScreen(),
+
   ];
 
   void changeBottomNavIcon(int index){
